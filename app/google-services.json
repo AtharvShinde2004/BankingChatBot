@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "51233988933",
+    "project_id": "banking-chatbot-e550b",
+    "storage_bucket": "banking-chatbot-e550b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:51233988933:android:893c396aa18af8af4c5e2c",
+        "android_client_info": {
+          "package_name": "com.example.bankingchatbot"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBulciooqkZrP6O1k2jRNTKMqs1OjO4hf8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
