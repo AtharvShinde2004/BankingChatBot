@@ -3,11 +3,11 @@ package com.example.bankingchatbot;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Patterns;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -33,16 +33,10 @@ public class SignupActivity extends AppCompatActivity {
     }
 
     private void createAccount() {
-        String email = emailEditText.getText().toString();
-        String password = passwordEditText.getText().toString();
+        String email = emailEditText.getText().toString().trim();
+        String password = passwordEditText.getText().toString().trim();
 
-        if (TextUtils.isEmpty(email)) {
-            emailEditText.setError("Email is required.");
-            return;
-        }
-
-        if (TextUtils.isEmpty(password)) {
-            passwordEditText.setError("Password is required.");
+        if (!validateInput(email, password)) {
             return;
         }
 
@@ -56,6 +50,30 @@ public class SignupActivity extends AppCompatActivity {
                         updateUI(null);
                     }
                 });
+    }
+
+    private boolean validateInput(String email, String password) {
+        if (TextUtils.isEmpty(email)) {
+            emailEditText.setError("Email is required.");
+            return false;
+        }
+
+        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+            emailEditText.setError("Enter a valid email address.");
+            return false;
+        }
+
+        if (TextUtils.isEmpty(password)) {
+            passwordEditText.setError("Password is required.");
+            return false;
+        }
+
+        if (password.length() < 6) {
+            passwordEditText.setError("Password must be at least 6 characters long.");
+            return false;
+        }
+
+        return true;
     }
 
     private void updateUI(FirebaseUser user) {
