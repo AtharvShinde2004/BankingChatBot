@@ -17,8 +17,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintTop_margin="16dp"/>
+        app:layout_constraintHorizontal_bias="0.5" />
 
     <Button
         android:id="@+id/logoutButton"
@@ -30,7 +29,6 @@
         app:layout_constraintTop_toBottomOf="@id/welcomeTextView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintTop_margin="16dp"/>
+        app:layout_constraintHorizontal_bias="0.5" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
