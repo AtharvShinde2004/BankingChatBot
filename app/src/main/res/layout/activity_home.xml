@@ -11,6 +11,7 @@
         android:id="@+id/welcomeTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
         android:text="@string/welcome"
         android:textSize="24sp"
         android:textColor="@color/colorPrimary"
@@ -21,12 +22,26 @@
 
     <Button
         android:id="@+id/logoutButton"
-        android:layout_width="100dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:text="@string/logout"
         android:backgroundTint="@color/colorButton"
         android:textColor="@color/colorButtonText"
         app:layout_constraintTop_toBottomOf="@id/welcomeTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5" />
+
+    <Button
+        android:id="@+id/chatButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/chat_here"
+        android:backgroundTint="@color/colorButton"
+        android:textColor="@color/colorButtonText"
+        app:layout_constraintTop_toBottomOf="@id/logoutButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5" />

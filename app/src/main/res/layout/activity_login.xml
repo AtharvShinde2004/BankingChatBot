@@ -13,7 +13,7 @@
         android:layout_height="100dp"
         android:layout_marginTop="32dp"
         android:contentDescription="@string/this_is_the_app_logo"
-        android:src="@drawable/ic_launcher_foreground"
+        android:src="@mipmap/ic_launcher_round"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -62,6 +62,30 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintWidth_percent="0.8" />
 
+    <CheckBox
+        android:id="@+id/showPasswordCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/show_password"
+        android:textColor="@color/colorButton"
+        app:layout_constraintTop_toBottomOf="@id/passwordEditText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5" />
+
+    <CheckBox
+        android:id="@+id/rememberMeCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/remember_me"
+        android:textColor="@color/colorButton"
+        app:layout_constraintTop_toBottomOf="@id/showPasswordCheckBox"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5" />
+
     <Button
         android:id="@+id/loginButton"
         android:layout_width="0dp"
@@ -70,11 +94,24 @@
         android:text="@string/login"
         android:backgroundTint="@color/colorButton"
         android:textColor="@color/colorButtonText"
-        app:layout_constraintTop_toBottomOf="@id/passwordEditText"
+        app:layout_constraintTop_toBottomOf="@id/rememberMeCheckBox"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintWidth_percent="0.8" />
+
+    <TextView
+        android:id="@+id/forgotPasswordTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/forgot_password"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/loginButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5" />
 
     <Button
         android:id="@+id/signupButton"
@@ -84,7 +121,7 @@
         android:text="@string/sign_up"
         android:backgroundTint="@color/colorButton"
         android:textColor="@color/colorButtonText"
-        app:layout_constraintTop_toBottomOf="@id/loginButton"
+        app:layout_constraintTop_toBottomOf="@id/forgotPasswordTextView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"

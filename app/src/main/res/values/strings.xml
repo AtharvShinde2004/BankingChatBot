@@ -1,11 +1,24 @@
 <resources>
-    <string name="app_name">BankingChatBot</string>
-    <string name="password">Password</string>
     <string name="login">Login</string>
-    <string name="sign_up">Sign Up</string>
-    <string name="email">Email</string>
     <string name="welcome">Welcome!</string>
     <string name="logout">Logout</string>
-    <string name="banking_chatbot">Banking Chatbot</string>
+    <string name="chat">Chat</string>
+    <string name="type_a_message">Type a message</string>
+    <string name="send">Send</string>
+    <string name="chat_here">Chat Here</string>
+    <string name="forgot_password">Forgot Password</string>
+    <string name="remember_me">Remember Me</string>
+    <string name="reset_password">Reset Password</string>
+    <string name="app_name">Banking Chatbot</string>
     <string name="this_is_the_app_logo">This is the app logo</string>
+    <string name="banking_chatbot">Banking Chatbot</string>
+    <string name="name">Name</string>
+    <string name="username">Username</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="show_password">Show Password</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="already_have_an_account_login">Already have an account? Login</string>
+    <string name="type_your_message_here">Type your message here</string>
 </resources>

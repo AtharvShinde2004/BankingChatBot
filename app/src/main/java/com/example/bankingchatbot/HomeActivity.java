@@ -21,11 +21,12 @@ public class HomeActivity extends AppCompatActivity {
 
         TextView welcomeTextView = findViewById(R.id.welcomeTextView);
         Button logoutButton = findViewById(R.id.logoutButton);
+        Button chatButton = findViewById(R.id.chatButton);
         mAuth = FirebaseAuth.getInstance();
 
         FirebaseUser user = mAuth.getCurrentUser();
         if (user != null) {
-            welcomeTextView.setText("Welcome, " + user.getEmail() );
+            welcomeTextView.setText("Welcome, " + user.getEmail());
         }
 
         logoutButton.setOnClickListener(view -> {
@@ -33,5 +34,7 @@ public class HomeActivity extends AppCompatActivity {
             startActivity(new Intent(HomeActivity.this, LoginActivity.class));
             finish();
         });
+
+        chatButton.setOnClickListener(view -> startActivity(new Intent(HomeActivity.this, ChatActivity.class)));
     }
 }
