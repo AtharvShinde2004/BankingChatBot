@@ -3,6 +3,7 @@ agp = "8.5.1"
 constraintlayout = "2.1.4"
 firebaseBom = "33.1.2"
 firebaseDatabase = "21.0.0"
+gson = "2.11.0"
 junit = "4.13.2"
 junitVersion = "1.2.1"
 espressoCore = "3.6.1"
@@ -15,6 +16,15 @@ constraintlayout = { module = "androidx.constraintlayout:constraintlayout", vers
 firebase-auth = { module = "com.google.firebase:firebase-auth" }
 firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "firebaseBom" }
 firebase-database = { module = "com.google.firebase:firebase-database", version.ref = "firebaseDatabase" }
+gax-grpc = { module = "com.google.api:gax-grpc", version = "2.50.0" }
+google-api-client = { module = "com.google.api-client:google-api-client", version = "2.6.0" }
+google-auth-library-oauth2-http = { module = "com.google.auth:google-auth-library-oauth2-http", version = "1.24.0" }
+google-cloud-dialogflow = { module = "com.google.cloud:google-cloud-dialogflow", version = "4.52.0" }
+grpc-auth = { module = "io.grpc:grpc-auth", version = "1.65.1" }
+grpc-okhttp = { module = "io.grpc:grpc-okhttp", version = "1.65.1" }
+grpc-protobuf = { module = "io.grpc:grpc-protobuf", version = "1.65.1" }
+grpc-stub = { module = "io.grpc:grpc-stub", version = "1.65.1" }
+gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
@@ -24,4 +34,3 @@ play-services-auth = { module = "com.google.android.gms:play-services-auth", ver
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
-

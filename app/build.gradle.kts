@@ -34,14 +34,24 @@ android {
 
 dependencies {
 
-    implementation(libs.appcompat)
-    implementation(libs.material)
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.ext.junit)
-    androidTestImplementation(libs.espresso.core)
+    implementation (platform(libs.firebase.bom))
     implementation (libs.firebase.auth)
     implementation (libs.firebase.database)
-    implementation (platform(libs.firebase.bom))
+    implementation (libs.grpc.okhttp)
+    implementation (libs.grpc.protobuf)
+    implementation (libs.grpc.stub)
+    implementation (libs.grpc.auth)
+    implementation (libs.google.auth.library.oauth2.http)
+    implementation (libs.google.cloud.dialogflow)
+    implementation (libs.gax.grpc)
+    implementation (libs.google.api.client)
+    implementation (libs.gson)
+    implementation (libs.appcompat)
     implementation (libs.constraintlayout)
-    implementation(libs.play.services.auth)
+    implementation (libs.material)
+    implementation (libs.play.services.auth)
+
+    testImplementation (libs.junit)
+    androidTestImplementation (libs.ext.junit)
+    androidTestImplementation (libs.espresso.core)
 }
