@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorBackground"
+    android:background="?attr/android:background"
     tools:context=".HomeActivity">
 
     <TextView
@@ -26,8 +26,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="@string/logout"
-        android:backgroundTint="@color/colorButton"
-        android:textColor="@color/colorButtonText"
+        android:backgroundTint="?attr/colorPrimary"
+        android:textColor="?attr/colorOnPrimary"
         app:layout_constraintTop_toBottomOf="@id/welcomeTextView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -39,8 +39,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="@string/chat_here"
-        android:backgroundTint="@color/colorButton"
-        android:textColor="@color/colorButtonText"
+        android:backgroundTint="?attr/colorPrimary"
+        android:textColor="?attr/colorOnPrimary"
         app:layout_constraintTop_toBottomOf="@id/logoutButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

@@ -7,44 +7,43 @@
     <ScrollView
         android:id="@+id/scrollView"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_above="@id/chatInputLayout"
-        android:layout_alignParentTop="true">
+        android:layout_height="match_parent"
+        android:background="?attr/android:background">
 
         <LinearLayout
             android:id="@+id/chatOutput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" />
+            android:orientation="vertical"
+            android:padding="16dp" />
+
     </ScrollView>
 
     <LinearLayout
-        android:id="@+id/chatInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
         android:padding="8dp"
-        android:background="?android:attr/windowBackground">
+        android:background="?attr/android:background">
 
         <EditText
             android:id="@+id/chatInput"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:hint="@string/type_your_message_here"
-            android:inputType="text"
+            android:background="@drawable/chat_input_background"
             android:padding="8dp"
-            android:background="@drawable/chat_input_background" />
+            android:hint="@string/type_a_message"
+            android:textColor="?attr/android:textColor" />
 
         <Button
             android:id="@+id/sendButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:background="@drawable/send_button_background"
             android:text="@string/send"
-            android:textColor="@android:color/white" />
+            android:background="?attr/colorPrimary"
+            android:textColor="?attr/colorOnPrimary" />
     </LinearLayout>
 
 </RelativeLayout>

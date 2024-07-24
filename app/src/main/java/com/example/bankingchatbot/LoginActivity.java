@@ -1,6 +1,8 @@
 package com.example.bankingchatbot;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.InputType;
 import android.text.TextUtils;
@@ -18,7 +20,9 @@ import com.google.firebase.auth.FirebaseAuth;
 public class LoginActivity extends AppCompatActivity {
 
     private EditText emailEditText, passwordEditText;
+    private CheckBox rememberMeCheckBox;
     private FirebaseAuth mAuth;
+    private SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,11 +32,23 @@ public class LoginActivity extends AppCompatActivity {
         emailEditText = findViewById(R.id.emailEditText);
         passwordEditText = findViewById(R.id.passwordEditText);
         CheckBox showPasswordCheckBox = findViewById(R.id.showPasswordCheckBox);
+        rememberMeCheckBox = findViewById(R.id.rememberMeCheckBox);
         Button loginButton = findViewById(R.id.loginButton);
         Button signupButton = findViewById(R.id.signupButton);
         TextView forgotPasswordTextView = findViewById(R.id.forgotPasswordTextView);
 
         mAuth = FirebaseAuth.getInstance();
+        sharedPreferences = getSharedPreferences("loginPrefs", Context.MODE_PRIVATE);
+
+        // Check if user is already logged in
+        if (mAuth.getCurrentUser() != null) {
+            // User is already logged in, navigate to HomeActivity
+            startActivity(new Intent(LoginActivity.this, HomeActivity.class));
+            finish();
+        }
+
+        // Load saved email and password if "Remember Me" was checked
+        loadSavedCredentials();
 
         showPasswordCheckBox.setOnCheckedChangeListener((buttonView, isChecked) -> {
             if (isChecked) {
@@ -58,6 +74,12 @@ public class LoginActivity extends AppCompatActivity {
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, task -> {
                     if (task.isSuccessful()) {
+                        // Save credentials if "Remember Me" is checked
+                        if (rememberMeCheckBox.isChecked()) {
+                            saveCredentials(email, password);
+                        } else {
+                            clearCredentials();
+                        }
                         // Sign in success
                         startActivity(new Intent(LoginActivity.this, HomeActivity.class));
                         finish();
@@ -98,5 +120,27 @@ public class LoginActivity extends AppCompatActivity {
                 password.matches(".*[a-z].*") &&
                 password.matches(".*\\d.*") &&
                 password.matches(".*_.*");
+    }
+
+    private void saveCredentials(String email, String password) {
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("email", email);
+        editor.putString("password", password);
+        editor.putBoolean("rememberMe", true);
+        editor.apply();
+    }
+
+    private void clearCredentials() {
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.clear();
+        editor.apply();
+    }
+
+    private void loadSavedCredentials() {
+        if (sharedPreferences.getBoolean("rememberMe", false)) {
+            emailEditText.setText(sharedPreferences.getString("email", ""));
+            passwordEditText.setText(sharedPreferences.getString("password", ""));
+            rememberMeCheckBox.setChecked(true);
+        }
     }
 }
