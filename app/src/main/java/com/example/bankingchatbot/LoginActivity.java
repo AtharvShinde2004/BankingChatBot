@@ -21,7 +21,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private EditText emailEditText, passwordEditText;
     private CheckBox rememberMeCheckBox;
-    private FirebaseAuth mAuth;
+    private FirebaseAuth mAuth;//@verify- constant should be complete UpperCase
     private SharedPreferences sharedPreferences;
 
     @Override
@@ -68,7 +68,7 @@ public class LoginActivity extends AppCompatActivity {
         String password = passwordEditText.getText().toString().trim();
 
         if (!validateInput(email, password)) {
-            return;
+            return;//for single statement curly brackets are optional
         }
 
         mAuth.signInWithEmailAndPassword(email, password)
